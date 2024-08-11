@@ -8,7 +8,7 @@ import { useColorMode } from "@/providers/ColorModeProvider";
 import { Button } from "./Button";
 
 const meta = {
-  title: "Example/Button",
+  title: "Inputs/Button",
   component: Button,
   parameters: {
     layout: "centered",
@@ -21,7 +21,6 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const PrimaryLarge: Story = {
   args: {
     children: "Button",

@@ -7,7 +7,7 @@ import { useColorMode } from "@/providers/ColorModeProvider";
 import { Typography } from "./Typography";
 
 const meta = {
-  title: "Example/Text",
+  title: "Typography",
   component: Typography,
   parameters: {
     layout: "centered",
