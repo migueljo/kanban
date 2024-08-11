@@ -1,6 +1,9 @@
 import React from "react";
 import { createTheme, ThemeProvider } from "@mui/material";
 
+import { typography } from "@/utils/typographyTheme";
+import { components } from "@/utils/componentsTheme";
+
 type Mode = "light" | "dark";
 
 const ColorModeContext = React.createContext({
@@ -24,6 +27,8 @@ export const ColorModeProvider = ({ children }: ColorModeProviderProps) => {
         palette: {
           mode,
         },
+        typography,
+        components,
       }),
     [mode]
   );

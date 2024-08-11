@@ -3,7 +3,6 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
-import { useTheme } from "@mui/material";
 
 import { useColorMode } from "@/providers/ColorModeProvider";
 import { Button } from "./Button";
@@ -67,7 +66,6 @@ export const DestructiveSmall: Story = {
 };
 
 export const AllButtonLightVariants = () => {
-  console.log("All variants");
   return (
     <Box>
       <Stack gap={2}>
@@ -87,9 +85,7 @@ export const AllButtonLightVariants = () => {
 };
 
 export const AllButtonDarkVariants = () => {
-  const theme = useTheme();
   const colorMode = useColorMode();
-  console.log("All dark variants", { mode: theme.palette.mode });
 
   useEffect(() => {
     colorMode.toggleColorMode();
