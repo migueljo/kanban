@@ -6,9 +6,10 @@ import { useTheme } from "@mui/material";
 
 import { Button } from "@/components/Button/Button";
 import { useColorMode } from "@/providers/ColorModeProvider";
+import { Typography } from "@/components/Text/Typography";
 
 export default function Dashboard() {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const colorMode = useColorMode();
   const theme = useTheme();
 
@@ -24,7 +25,7 @@ export default function Dashboard() {
           }}
         >
           <Box component="header" sx={{ height: "97px" }}>
-            <p>Logo</p>
+            <Typography>Logo</Typography>
           </Box>
           <Box component="nav" sx={{ width: "300px" }}>
             <ul>
@@ -43,11 +44,11 @@ export default function Dashboard() {
       </Drawer>
       <main>
         <header>
-          <h1>Platform Launch</h1>
+          <Typography variant="xl">Platform launch</Typography>
           <Button>Add new task</Button>
         </header>
       </main>
-      <h1>Dashboard</h1>
+      <Typography variant="xl">Dashboard</Typography>
       <div>
         <Button onClick={() => setOpen(true)}>Toggle drawer</Button>
       </div>

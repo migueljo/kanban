@@ -1,3 +1,4 @@
+import "@fontsource/plus-jakarta-sans";
 import type { AppProps } from "next/app";
 import { RootProvider } from "@/providers/RootProvider";
 
