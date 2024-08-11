@@ -1,4 +1,15 @@
+import React from "react";
 import type { Preview } from "@storybook/react";
+
+import { RootProvider } from "../src/providers/RootProvider";
+
+export const decorators = [
+  (Story) => (
+    <RootProvider>
+      <Story />
+    </RootProvider>
+  ),
+];
 
 const preview: Preview = {
   parameters: {

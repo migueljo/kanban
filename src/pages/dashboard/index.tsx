@@ -34,8 +34,7 @@ export default function Dashboard() {
             </ul>
           </Box>
           <Box>
-            <p>{colorMode.mode} mode from context</p>
-            <p>{theme.palette.mode} mode from MUI theme</p>
+            <p>{theme.palette.mode} mode</p>
             <Button onClick={colorMode.toggleColorMode}>
               Toggle dark mode
             </Button>

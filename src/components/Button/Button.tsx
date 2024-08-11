@@ -17,14 +17,20 @@ function PrimaryButton(props: ButtonProps) {
   return <PrimaryButtonStyled {...props} variant="contained" />;
 }
 
-const SecondaryButtonStyled = styled(MuiButton)({
-  backgroundColor: alpha(colors.mainPurple, 0.1),
+const SecondaryButtonStyled = styled(MuiButton)(({ theme }) => ({
+  backgroundColor:
+    theme.palette.mode === "light"
+      ? alpha(colors.mainPurple, 0.1)
+      : colors.white,
   color: colors.mainPurple,
 
   "&:hover": {
-    backgroundColor: alpha(colors.mainPurple, 0.25),
+    backgroundColor:
+      theme.palette.mode === "light"
+        ? alpha(colors.mainPurple, 0.25)
+        : colors.white,
   },
-});
+}));
 
 function SecondaryButton(props: ButtonProps) {
   return <SecondaryButtonStyled {...props} variant="contained" />;

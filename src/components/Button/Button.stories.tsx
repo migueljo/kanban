@@ -1,8 +1,11 @@
+import { useEffect } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
+import { useTheme } from "@mui/material";
 
+import { useColorMode } from "@/providers/ColorModeProvider";
 import { Button } from "./Button";
 
 const meta = {
@@ -84,7 +87,14 @@ export const AllButtonLightVariants = () => {
 };
 
 export const AllButtonDarkVariants = () => {
-  console.log("All dark variants");
+  const theme = useTheme();
+  const colorMode = useColorMode();
+  console.log("All dark variants", { mode: theme.palette.mode });
+
+  useEffect(() => {
+    colorMode.toggleColorMode();
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
   return (
     <Box>
       <Stack gap={2}>
