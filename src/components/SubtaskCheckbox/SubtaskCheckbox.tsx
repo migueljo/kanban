@@ -18,7 +18,7 @@ type SubtaskCheckboxProps = CheckboxProps & {
 export function SubtaskCheckbox(props: SubtaskCheckboxProps) {
   const { label } = props;
   const darkMode = useDarkMode();
-  console.log("darkMode", darkMode);
+
   return (
     <FormControlLabel
       sx={{
