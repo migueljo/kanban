@@ -6,10 +6,10 @@ import CheckboxMui, {
 import FormControlLabel, {
   formControlLabelClasses,
 } from "@mui/material/FormControlLabel";
-import Box from "@mui/material/Box";
 
 import { colors } from "@/utils/colors";
-import { alpha } from "@mui/material";
+import { alpha, useTheme } from "@mui/material";
+import { useDarkMode } from "@/utils/hooks/useDarkMode";
 
 type SubtaskCheckboxProps = CheckboxProps & {
   label: string;
@@ -17,12 +17,13 @@ type SubtaskCheckboxProps = CheckboxProps & {
 
 export function SubtaskCheckbox(props: SubtaskCheckboxProps) {
   const { label } = props;
-
+  const darkMode = useDarkMode();
+  console.log("darkMode", darkMode);
   return (
     <FormControlLabel
       sx={{
         width: "100%",
-        backgroundColor: colors.lightGrey,
+        backgroundColor: darkMode ? colors.veryDarkGrey : colors.lightGrey,
         borderRadius: "4px",
         paddingRight: "12px",
 
@@ -33,7 +34,12 @@ export function SubtaskCheckbox(props: SubtaskCheckboxProps) {
         [`& .${formControlLabelClasses.label}`]: {
           fontWeight: "bold",
           fontSize: "12px",
-          color: colors.black,
+          color: darkMode ? colors.white : colors.black,
+        },
+        [`& .${formControlLabelClasses.asterisk}`]: {
+          fontWeight: "bold",
+          fontSize: "12px",
+          color: darkMode ? colors.white : colors.black,
         },
 
         [`& .${checkboxClasses.checked} ~ .${formControlLabelClasses.label}`]: {
