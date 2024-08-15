@@ -23,10 +23,10 @@ export const AllLightVariants = () => {
   return (
     <Box>
       <Stack gap={2}>
-        <Typography variant="xl">Heading XL</Typography>
-        <Typography variant="l">Heading L</Typography>
-        <Typography variant="m">Heading M</Typography>
-        <Typography variant="s">Heading S</Typography>
+        <Typography variant="headingXL">Heading XL</Typography>
+        <Typography variant="headingL">Heading L</Typography>
+        <Typography variant="headingM">Heading M</Typography>
+        <Typography variant="headingS">Heading S</Typography>
         <Typography variant="bodyL">Body L</Typography>
         <Typography variant="bodyM">Body M</Typography>
       </Stack>
@@ -44,10 +44,10 @@ export const AllDarkVariants = () => {
   return (
     <Box>
       <Stack gap={2}>
-        <Typography variant="xl">Heading XL</Typography>
-        <Typography variant="l">Heading L</Typography>
-        <Typography variant="m">Heading M</Typography>
-        <Typography variant="s">Heading S</Typography>
+        <Typography variant="headingXL">Heading XL</Typography>
+        <Typography variant="headingL">Heading L</Typography>
+        <Typography variant="headingM">Heading M</Typography>
+        <Typography variant="headingS">Heading S</Typography>
         <Typography variant="bodyL">Body L</Typography>
         <Typography variant="bodyM">Body M</Typography>
       </Stack>
