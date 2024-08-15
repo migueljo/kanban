@@ -31,7 +31,24 @@ export const AllLightVariants = () => {
   return (
     <Box>
       <Stack gap={2}>
-        <TextField label="Label" inputProps={{ onChange: console.log }} />
+        <TextField
+          label="TextField(Idle)"
+          inputProps={{ onChange: console.log, placeholder: "Placeholder" }}
+        />
+        <TextField
+          label="TextField(Active)"
+          inputProps={{ onChange: console.log, value: "With value" }}
+        />
+        <TextField
+          label="TextField(Error)"
+          inputProps={{ onChange: console.log }}
+          error
+          helperText="Error message"
+        />
+        <TextField
+          label="Uncontrolled"
+          inputProps={{ onChange: console.log }}
+        />
       </Stack>
     </Box>
   );
@@ -46,7 +63,26 @@ export const AllDarkVariants = () => {
 
   return (
     <Box>
-      <Stack gap={2}></Stack>
+      <Stack gap={2}>
+        <TextField
+          label="TextField(Idle)"
+          inputProps={{ onChange: console.log, placeholder: "Placeholder" }}
+        />
+        <TextField
+          label="TextField(Active)"
+          inputProps={{ onChange: console.log, value: "With value" }}
+        />
+        <TextField
+          label="TextField(Error)"
+          inputProps={{ onChange: console.log }}
+          error
+          helperText="Error message"
+        />
+        <TextField
+          label="Uncontrolled"
+          inputProps={{ onChange: console.log }}
+        />
+      </Stack>
     </Box>
   );
 };

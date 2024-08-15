@@ -6,30 +6,31 @@ const fontFamily = ["Plus Jakarta Sans", "sans-serif"].join(",");
 
 export const typography: ThemeOptions["typography"] = {
   fontFamily,
-  xl: {
+  headingXL: {
     fontWeight: "bold",
     fontSize: "24px",
     lineHeight: "30px",
     fontFamily,
   },
-  l: {
+  headingL: {
     fontWeight: "bold",
     fontSize: "18px",
     lineHeight: "23px",
     fontFamily,
   },
-  m: {
+  headingM: {
     fontWeight: "bold",
     fontSize: "15px",
     lineHeight: "19px",
     fontFamily,
   },
-  s: {
+  headingS: {
     color: colors.mediumGray,
     fontWeight: "bold",
     fontSize: "12px",
     lineHeight: "15px",
     fontFamily,
+    letterSpacing: "2.4px",
   },
   bodyL: {
     fontWeight: "normal",
@@ -47,20 +48,20 @@ export const typography: ThemeOptions["typography"] = {
 
 declare module "@mui/material/styles" {
   interface TypographyVariants {
-    xl: React.CSSProperties;
-    l: React.CSSProperties;
-    m: React.CSSProperties;
-    s: React.CSSProperties;
+    headingXL: React.CSSProperties;
+    headingL: React.CSSProperties;
+    headingM: React.CSSProperties;
+    headingS: React.CSSProperties;
     bodyL: React.CSSProperties;
     bodyM: React.CSSProperties;
   }
 
   // allow configuration using `createTheme`
   interface TypographyVariantsOptions {
-    xl?: React.CSSProperties;
-    l?: React.CSSProperties;
-    m?: React.CSSProperties;
-    s?: React.CSSProperties;
+    headingXL?: React.CSSProperties;
+    headingL?: React.CSSProperties;
+    headingM?: React.CSSProperties;
+    headingS?: React.CSSProperties;
     bodyL?: React.CSSProperties;
     bodyM?: React.CSSProperties;
   }
@@ -69,10 +70,10 @@ declare module "@mui/material/styles" {
 // Update the Typography's variant prop options
 declare module "@mui/material/Typography" {
   interface TypographyPropsVariantOverrides {
-    xl: true;
-    l: true;
-    m: true;
-    s: true;
+    headingXL: true;
+    headingL: true;
+    headingM: true;
+    headingS: true;
     bodyL: true;
     bodyM: true;
   }

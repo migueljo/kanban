@@ -2,9 +2,15 @@ import React from "react";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import FormHelperText from "@mui/material/FormHelperText";
-import OutlinedInput, { OutlinedInputProps } from "@mui/material/OutlinedInput";
+import OutlinedInput, {
+  OutlinedInputProps,
+  outlinedInputClasses,
+} from "@mui/material/OutlinedInput";
+import Box from "@mui/material/Box";
 
 import { useDarkMode } from "@/utils/hooks/useDarkMode";
+import { formLabelClasses, useTheme } from "@mui/material";
+import { colors } from "@/utils/colors";
 
 type TextFieldProps = {
   label: string;
@@ -17,10 +23,10 @@ type TextFieldProps = {
 export function TextField(props: TextFieldProps) {
   const { label, id, helperText = "", error = false, inputProps } = props;
   const darkMode = useDarkMode();
-  console.log("darkMode", darkMode);
+  console.log({ darkMode });
 
   return (
-    <>
+    <TextFieldSyledCtn>
       <FormControl error={error} variant="standard">
         <InputLabel shrink htmlFor={id}>
           {label}
@@ -28,6 +34,34 @@ export function TextField(props: TextFieldProps) {
         <OutlinedInput {...inputProps} id={id} />
         <FormHelperText>{helperText}</FormHelperText>
       </FormControl>
-    </>
+    </TextFieldSyledCtn>
+  );
+}
+
+function TextFieldSyledCtn(props: { children: React.ReactNode }) {
+  const theme = useTheme();
+
+  return (
+    <Box
+      sx={{
+        [`& .${formLabelClasses.root}`]: {
+          position: "relative",
+          fontWeight: "bold",
+          color: colors.mediumGray,
+          ...theme.typography.headingS,
+        },
+        [`& .${outlinedInputClasses.input}`]: {
+          height: "40px",
+          boxSizing: "border-box",
+          ...theme.typography.bodyL,
+
+          "&::placeholder": {
+            color: colors.mediumGray,
+          },
+        },
+      }}
+    >
+      {props.children}
+    </Box>
   );
 }

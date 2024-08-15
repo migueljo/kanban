@@ -16,15 +16,10 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  font-family: "Plus Jakarta Sans", sans-serif;
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 @layer utilities {
