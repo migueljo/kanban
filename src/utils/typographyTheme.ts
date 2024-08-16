@@ -25,12 +25,11 @@ export const typography: ThemeOptions["typography"] = {
     fontFamily,
   },
   headingS: {
-    color: colors.mediumGray,
     fontWeight: "bold",
     fontSize: "12px",
     lineHeight: "15px",
-    fontFamily,
     letterSpacing: "2.4px",
+    fontFamily,
   },
   bodyL: {
     fontWeight: "normal",
