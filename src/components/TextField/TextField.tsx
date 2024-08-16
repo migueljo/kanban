@@ -40,15 +40,16 @@ export function TextField(props: TextFieldProps) {
 
 function TextFieldSyledCtn(props: { children: React.ReactNode }) {
   const theme = useTheme();
+  const darkMode = useDarkMode();
 
   return (
     <Box
       sx={{
-        [`& .${formLabelClasses.root}`]: {
+        [`& .${formLabelClasses.root}.${formLabelClasses.root}`]: {
           position: "relative",
           fontWeight: "bold",
-          color: colors.mediumGray,
-          ...theme.typography.headingS,
+          color: darkMode ? colors.white : colors.mediumGray,
+          ...theme.typography.headingL,
         },
         [`& .${outlinedInputClasses.input}`]: {
           height: "40px",
