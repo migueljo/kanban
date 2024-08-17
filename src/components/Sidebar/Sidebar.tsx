@@ -11,6 +11,7 @@ import VisibilityRoundedIcon from "@mui/icons-material/VisibilityRounded";
 import { Button } from "@/components/Button/Button";
 import { Typography } from "@/components/Text/Typography";
 import { DarkModeSwitch } from "@/components//DarkModeSwitch/DarkModeSwitch";
+import Image from "next/image";
 
 export function Sidebar() {
   const [open, setOpen] = React.useState(true);
@@ -27,8 +28,16 @@ export function Sidebar() {
           }}
         >
           <Box>
-            <Box component="header" sx={{ height: "97px" }}>
-              <Typography>Logo</Typography>
+            <Box
+              component="header"
+              sx={{
+                height: "97px",
+                paddingLeft: "32px",
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              <Image src="/logo-dark.svg" alt="Logo" width={150} height={24} />
             </Box>
             <Box sx={{ width: "300px", paddingRight: "24px" }}>
               <Box sx={{ paddingLeft: "32px", marginBottom: "20px" }}>
