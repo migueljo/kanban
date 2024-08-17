@@ -12,7 +12,6 @@ const ButtonBaseStyled = styled(MuiButton)(({ theme, size }) => ({
   borderRadius: size === "large" ? "24px" : "20px",
   textTransform: "none",
   boxShadow: "none",
-  minWidth: "255px",
 
   "&:hover": {
     boxShadow: "none",

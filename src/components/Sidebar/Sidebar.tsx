@@ -6,6 +6,7 @@ import ButtonMui from "@mui/material/Button";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import SpaceDashboardIcon from "@mui/icons-material/SpaceDashboard";
 import AddRoundedIcon from "@mui/icons-material/AddRounded";
+import VisibilityRoundedIcon from "@mui/icons-material/VisibilityRounded";
 
 import { Button } from "@/components/Button/Button";
 import { Typography } from "@/components/Text/Typography";
@@ -79,7 +80,9 @@ export function Sidebar() {
           display: open ? "none" : "block",
         }}
       >
-        <Button onClick={() => setOpen(true)}>Open sidebar</Button>
+        <Button kind="edge" onClick={() => setOpen(true)}>
+          <VisibilityRoundedIcon />
+        </Button>
       </Box>
     </>
   );
