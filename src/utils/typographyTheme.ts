@@ -1,7 +1,5 @@
 import { ThemeOptions } from "@mui/material";
 
-import { colors } from "./colors";
-
 const fontFamily = ["Plus Jakarta Sans", "sans-serif"].join(",");
 
 export const typography: ThemeOptions["typography"] = {

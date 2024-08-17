@@ -3,6 +3,8 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
+import SpaceDashboardIcon from "@mui/icons-material/SpaceDashboard";
+import AddRoundedIcon from "@mui/icons-material/AddRounded";
 
 import { useDarkMode } from "@/providers/DarkModeProvider";
 import { Button } from "./Button";
@@ -78,6 +80,29 @@ export const AllButtonLightVariants = () => {
         <Button kind="destructive" size="small">
           Destructive Small
         </Button>
+        <Button
+          kind="edge"
+          startIcon={
+            <>
+              <SpaceDashboardIcon />
+              <AddRoundedIcon />
+            </>
+          }
+        >
+          Edge Button Large
+        </Button>
+        <Button
+          kind="edge"
+          startIcon={
+            <>
+              <SpaceDashboardIcon />
+              <AddRoundedIcon />
+            </>
+          }
+          size="small"
+        >
+          Edge Button Small
+        </Button>
       </Stack>
     </Box>
   );
@@ -102,6 +127,10 @@ export const AllButtonDarkVariants = () => {
         <Button kind="destructive">Destructive Large</Button>
         <Button kind="destructive" size="small">
           Destructive Small
+        </Button>
+        <Button kind="edge">Edge Button Large</Button>
+        <Button kind="edge" size="small">
+          Edge Button Small
         </Button>
       </Stack>
     </Box>
