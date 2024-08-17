@@ -4,6 +4,8 @@ import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import ButtonMui from "@mui/material/Button";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+import SpaceDashboardIcon from "@mui/icons-material/SpaceDashboard";
+import AddRoundedIcon from "@mui/icons-material/AddRounded";
 
 import { Button } from "@/components/Button/Button";
 import { Typography } from "@/components/Text/Typography";
@@ -27,13 +29,31 @@ export function Sidebar() {
             <Box component="header" sx={{ height: "97px" }}>
               <Typography>Logo</Typography>
             </Box>
-            <Typography variant="headingS">All boards (3)</Typography>
-            <Box sx={{ width: "300px" }}>
+            <Box sx={{ width: "300px", paddingRight: "24px" }}>
+              <Box sx={{ paddingLeft: "32px", marginBottom: "20px" }}>
+                <Typography variant="headingS">All boards (3)</Typography>
+              </Box>
               <Stack gap={1}>
-                <Button>Platform Launch</Button>
-                <Button>Marketing Plan</Button>
-                <Button>Roadmap</Button>
-                <Button>Create New Board</Button>
+                <Button kind="edge" startIcon={<SpaceDashboardIcon />}>
+                  Platform Launch
+                </Button>
+                <Button kind="edge" startIcon={<SpaceDashboardIcon />}>
+                  Marketing Plan
+                </Button>
+                <Button kind="edge" startIcon={<SpaceDashboardIcon />}>
+                  Roadmap
+                </Button>
+                <Button
+                  kind="edge"
+                  startIcon={
+                    <>
+                      <SpaceDashboardIcon />
+                      <AddRoundedIcon />
+                    </>
+                  }
+                >
+                  Create New Board
+                </Button>
               </Stack>
             </Box>
           </Box>
