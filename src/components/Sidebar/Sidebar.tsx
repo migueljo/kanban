@@ -2,18 +2,15 @@ import React from "react";
 import Drawer from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
-import { useTheme } from "@mui/material";
+import ButtonMui from "@mui/material/Button";
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 
 import { Button } from "@/components/Button/Button";
-import { useDarkMode } from "@/providers/DarkModeProvider";
 import { Typography } from "@/components/Text/Typography";
 import { DarkModeSwitch } from "@/components//DarkModeSwitch/DarkModeSwitch";
 
 export function Sidebar() {
   const [open, setOpen] = React.useState(true);
-  const colorMode = useDarkMode();
-  const theme = useTheme();
-
   return (
     <>
       <Drawer open={open} onClose={() => setOpen(false)}>
@@ -23,6 +20,7 @@ export function Sidebar() {
             flexDirection: "column",
             justifyContent: "space-between",
             height: "100%",
+            pb: "47px",
           }}
         >
           <Box>
@@ -41,8 +39,15 @@ export function Sidebar() {
           </Box>
           <Box sx={{ width: "85%", margin: "0 auto" }}>
             <DarkModeSwitch />
-            <p>{theme.palette.mode} mode</p>
-            <Button onClick={colorMode.toggleDarkMode}>Toggle dark mode</Button>
+            <ButtonMui
+              variant="text"
+              startIcon={<VisibilityOffIcon />}
+              fullWidth
+              sx={{ mt: 1, textTransform: "none" }}
+              onClick={() => setOpen(false)}
+            >
+              Hide Sidebar
+            </ButtonMui>
           </Box>
         </Box>
       </Drawer>
