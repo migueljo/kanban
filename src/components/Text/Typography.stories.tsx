@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 
-import { useColorMode } from "@/providers/ColorModeProvider";
+import { useDarkMode } from "@/providers/DarkModeProvider";
 import { Typography } from "./Typography";
 
 const meta = {
@@ -35,10 +35,10 @@ export const AllLightVariants = () => {
 };
 
 export const AllDarkVariants = () => {
-  const colorMode = useColorMode();
+  const colorMode = useDarkMode();
 
   useEffect(() => {
-    colorMode.toggleColorMode();
+    colorMode.toggleDarkMode();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (

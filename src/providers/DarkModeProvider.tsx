@@ -6,18 +6,18 @@ import { components } from "@/utils/componentsTheme";
 
 type Mode = "light" | "dark";
 
-const ColorModeContext = React.createContext({
+const DarkModeContext = React.createContext({
   mode: "light" as Mode,
-  toggleColorMode: () => {},
+  toggleDarkMode: () => {},
 });
 
-type ColorModeProviderProps = {
+type DarkModeProviderProps = {
   children: React.ReactNode;
 };
 
-export const ColorModeProvider = ({ children }: ColorModeProviderProps) => {
+export const DarkModeProvider = ({ children }: DarkModeProviderProps) => {
   const [mode, setMode] = React.useState<Mode>("light");
-  const toggleColorMode = () => {
+  const toggleDarkMode = () => {
     setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
   };
 
@@ -34,14 +34,14 @@ export const ColorModeProvider = ({ children }: ColorModeProviderProps) => {
   );
 
   return (
-    <ColorModeContext.Provider value={{ toggleColorMode, mode }}>
+    <DarkModeContext.Provider value={{ toggleDarkMode, mode }}>
       <ThemeProvider theme={theme}>{children}</ThemeProvider>
-    </ColorModeContext.Provider>
+    </DarkModeContext.Provider>
   );
 };
 
-export const useColorMode = () => {
-  const context = React.useContext(ColorModeContext);
+export const useDarkMode = () => {
+  const context = React.useContext(DarkModeContext);
   if (context === undefined) {
     throw new Error("useColorMode must be used within a ColorModeProvider");
   }

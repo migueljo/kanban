@@ -1,6 +1,6 @@
-import { useTheme } from "@mui/material";
+import { useDarkMode } from "@/providers/DarkModeProvider";
 
-export function useDarkMode() {
-  const theme = useTheme();
-  return theme.palette.mode === "dark";
+export function useIsDarkMode() {
+  const darkMode = useDarkMode();
+  return darkMode.mode === "dark";
 }

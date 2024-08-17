@@ -3,7 +3,7 @@ import type { Meta } from "@storybook/react";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 
-import { useColorMode } from "@/providers/ColorModeProvider";
+import { useDarkMode } from "@/providers/DarkModeProvider";
 import { DarkModeSwitch } from "./DarkModeSwitch";
 
 const meta = {
@@ -30,10 +30,10 @@ export const Light = () => {
 };
 
 export const Dark = () => {
-  const colorMode = useColorMode();
+  const colorMode = useDarkMode();
 
   useEffect(() => {
-    colorMode.toggleColorMode();
+    colorMode.toggleDarkMode();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (

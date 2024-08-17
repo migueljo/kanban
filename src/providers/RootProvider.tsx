@@ -1,11 +1,11 @@
 import "../app/globals.css";
 import React from "react";
-import { ColorModeProvider } from "./ColorModeProvider";
+import { DarkModeProvider } from "./DarkModeProvider";
 
 type RootProviderProps = {
   children: React.ReactNode;
 };
 
 export const RootProvider = ({ children }: RootProviderProps) => {
-  return <ColorModeProvider>{children}</ColorModeProvider>;
+  return <DarkModeProvider>{children}</DarkModeProvider>;
 };

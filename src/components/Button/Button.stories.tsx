@@ -4,7 +4,7 @@ import { fn } from "@storybook/test";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 
-import { useColorMode } from "@/providers/ColorModeProvider";
+import { useDarkMode } from "@/providers/DarkModeProvider";
 import { Button } from "./Button";
 
 const meta = {
@@ -84,10 +84,10 @@ export const AllButtonLightVariants = () => {
 };
 
 export const AllButtonDarkVariants = () => {
-  const colorMode = useColorMode();
+  const colorMode = useDarkMode();
 
   useEffect(() => {
-    colorMode.toggleColorMode();
+    colorMode.toggleDarkMode();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (

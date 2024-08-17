@@ -5,13 +5,13 @@ import Stack from "@mui/material/Stack";
 import { useTheme } from "@mui/material";
 
 import { Button } from "@/components/Button/Button";
-import { useColorMode } from "@/providers/ColorModeProvider";
+import { useDarkMode } from "@/providers/DarkModeProvider";
 import { Typography } from "@/components/Text/Typography";
 import { DarkModeSwitch } from "@/components//DarkModeSwitch/DarkModeSwitch";
 
 export function Sidebar() {
   const [open, setOpen] = React.useState(true);
-  const colorMode = useColorMode();
+  const colorMode = useDarkMode();
   const theme = useTheme();
 
   return (
@@ -39,12 +39,10 @@ export function Sidebar() {
               </Stack>
             </Box>
           </Box>
-          <Box>
+          <Box sx={{ width: "85%", margin: "0 auto" }}>
             <DarkModeSwitch />
             <p>{theme.palette.mode} mode</p>
-            <Button onClick={colorMode.toggleColorMode}>
-              Toggle dark mode
-            </Button>
+            <Button onClick={colorMode.toggleDarkMode}>Toggle dark mode</Button>
           </Box>
         </Box>
       </Drawer>

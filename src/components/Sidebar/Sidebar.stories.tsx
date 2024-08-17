@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 
-import { useColorMode } from "@/providers/ColorModeProvider";
+import { useDarkMode } from "@/providers/DarkModeProvider";
 import { Sidebar } from "./Sidebar";
 
 const meta = {
@@ -24,10 +24,10 @@ export const SidebarLight: Story = {
 };
 
 export const SidebarDark = () => {
-  const colorMode = useColorMode();
+  const colorMode = useDarkMode();
 
   useEffect(() => {
-    colorMode.toggleColorMode();
+    colorMode.toggleDarkMode();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return <Sidebar />;

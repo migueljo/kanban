@@ -9,7 +9,7 @@ import FormControlLabel, {
 
 import { colors } from "@/utils/colors";
 import { alpha, useTheme } from "@mui/material";
-import { useDarkMode } from "@/utils/hooks/useDarkMode";
+import { useIsDarkMode } from "@/utils/hooks/useDarkMode";
 
 type SubtaskCheckboxProps = CheckboxProps & {
   label: string;
@@ -17,7 +17,7 @@ type SubtaskCheckboxProps = CheckboxProps & {
 
 export function SubtaskCheckbox(props: SubtaskCheckboxProps) {
   const { label } = props;
-  const darkMode = useDarkMode();
+  const darkMode = useIsDarkMode();
 
   return (
     <FormControlLabel

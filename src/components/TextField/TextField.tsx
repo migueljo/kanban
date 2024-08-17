@@ -8,7 +8,7 @@ import OutlinedInput, {
 } from "@mui/material/OutlinedInput";
 import Box from "@mui/material/Box";
 
-import { useDarkMode } from "@/utils/hooks/useDarkMode";
+import { useIsDarkMode } from "@/utils/hooks/useDarkMode";
 import { formLabelClasses, useTheme } from "@mui/material";
 import { colors } from "@/utils/colors";
 
@@ -22,7 +22,7 @@ type TextFieldProps = {
 
 export function TextField(props: TextFieldProps) {
   const { label, id, helperText = "", error = false, inputProps } = props;
-  const darkMode = useDarkMode();
+  const darkMode = useIsDarkMode();
   console.log({ darkMode });
 
   return (
@@ -40,7 +40,7 @@ export function TextField(props: TextFieldProps) {
 
 function TextFieldSyledCtn(props: { children: React.ReactNode }) {
   const theme = useTheme();
-  const darkMode = useDarkMode();
+  const darkMode = useIsDarkMode();
 
   return (
     <Box
