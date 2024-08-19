@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import Drawer from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
@@ -11,10 +12,9 @@ import VisibilityRoundedIcon from "@mui/icons-material/VisibilityRounded";
 import { Button } from "@/components/Button/Button";
 import { Typography } from "@/components/Text/Typography";
 import { DarkModeSwitch } from "@/components//DarkModeSwitch/DarkModeSwitch";
-import Image from "next/image";
 
 export function Sidebar() {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   return (
     <>
       <Drawer open={open} onClose={() => setOpen(false)}>
@@ -89,7 +89,7 @@ export function Sidebar() {
           display: open ? "none" : "block",
         }}
       >
-        <Button kind="edge" onClick={() => setOpen(true)}>
+        <Button kind="edge" onClick={() => setOpen(true)} active>
           <VisibilityRoundedIcon />
         </Button>
       </Box>

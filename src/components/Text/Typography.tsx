@@ -1,13 +1,16 @@
 import React from "react";
 import TypographyMui, { TypographyProps } from "@mui/material/Typography";
+
 import { colors } from "@/utils/colors";
 
 export function Typography(props: TypographyProps) {
+  const { color, ...restProps } = props;
+
   return (
     <TypographyMui
-      {...props}
+      {...restProps}
       sx={(theme) => ({
-        color: theme.palette.text.primary,
+        color: color ?? theme.palette.text.primary,
 
         "&.MuiTypography-headingS": {
           color: colors.mediumGrey,
