@@ -51,24 +51,27 @@ const DestructiveButtonStyled = styled(ButtonBaseStyled)({
   },
 });
 
-const EdgeButtonStyled = styled(ButtonBaseStyled)({
-  backgroundColor: colors.mainPurple,
-  color: colors.white,
-  borderRadius: "0 100px 100px 0",
-  fontWeight: 500,
-  textAlign: "left",
-  paddingLeft: "32px",
-  justifyContent: "flex-start",
+const EdgeButtonStyled = styled(ButtonBaseStyled)<ButtonProps>(
+  ({ active }) => ({
+    backgroundColor: active ? colors.mainPurple : colors.white,
+    color: active ? colors.white : colors.mediumGrey,
+    borderRadius: "0 100px 100px 0",
+    fontWeight: 500,
+    textAlign: "left",
+    paddingLeft: "32px",
+    justifyContent: "flex-start",
 
-  "&:hover": {
-    backgroundColor: colors.mainPurpleHover,
-  },
+    "&:hover": {
+      backgroundColor: active ? colors.mainPurpleHover : colors.white,
+      color: active ? colors.white : colors.mainPurple,
+    },
 
-  [`& .${buttonClasses.startIcon}`]: {
-    display: "flex",
-    alignItems: "center",
-  },
-});
+    [`& .${buttonClasses.startIcon}`]: {
+      display: "flex",
+      alignItems: "center",
+    },
+  })
+);
 
 export function SecondaryButton(props: ButtonProps) {
   return <SecondaryButtonStyled {...props} variant="contained" />;
@@ -88,4 +91,5 @@ export function PrimaryButton(props: ButtonProps) {
 
 export type ButtonProps = ButtonPropsMui & {
   kind?: "primary" | "secondary" | "destructive" | "edge";
+  active?: boolean;
 };

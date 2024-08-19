@@ -48,7 +48,7 @@ function TextFieldSyledCtn(props: { children: React.ReactNode }) {
         [`& .${formLabelClasses.root}.${formLabelClasses.root}`]: {
           position: "relative",
           fontWeight: "bold",
-          color: darkMode ? colors.white : colors.mediumGray,
+          color: darkMode ? colors.white : colors.mediumGrey,
           ...theme.typography.headingL,
         },
         [`& .${outlinedInputClasses.input}`]: {
@@ -57,7 +57,7 @@ function TextFieldSyledCtn(props: { children: React.ReactNode }) {
           ...theme.typography.bodyL,
 
           "&::placeholder": {
-            color: colors.mediumGray,
+            color: colors.mediumGrey,
           },
         },
       }}

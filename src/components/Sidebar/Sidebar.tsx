@@ -44,7 +44,7 @@ export function Sidebar() {
                 <Typography variant="headingS">All boards (3)</Typography>
               </Box>
               <Stack gap={1}>
-                <Button kind="edge" startIcon={<SpaceDashboardIcon />}>
+                <Button kind="edge" startIcon={<SpaceDashboardIcon />} active>
                   Platform Launch
                 </Button>
                 <Button kind="edge" startIcon={<SpaceDashboardIcon />}>

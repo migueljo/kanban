@@ -10,7 +10,7 @@ export function Typography(props: TypographyProps) {
         color: theme.palette.text.primary,
 
         "&.MuiTypography-headingS": {
-          color: colors.mediumGray,
+          color: colors.mediumGrey,
         },
       })}
     />

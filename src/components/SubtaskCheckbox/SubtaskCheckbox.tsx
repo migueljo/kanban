@@ -44,16 +44,16 @@ export function SubtaskCheckbox(props: SubtaskCheckboxProps) {
 
         [`& .${checkboxClasses.checked} ~ .${formControlLabelClasses.label}`]: {
           textDecoration: "line-through",
-          color: colors.mediumGray,
+          color: colors.mediumGrey,
         },
         [`& .${checkboxClasses.checked} ~ div > .${formControlLabelClasses.label}`]:
           {
             textDecoration: "line-through",
-            color: colors.mediumGray,
+            color: colors.mediumGrey,
           },
         [`& .${checkboxClasses.checked} ~ div > .${formControlLabelClasses.asterisk}`]:
           {
-            color: colors.mediumGray,
+            color: colors.mediumGrey,
           },
       }}
       control={<CheckboxMui {...props} />}
